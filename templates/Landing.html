@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Awareness and Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-green-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Cancer Awareness & Detection Portal</h1>
+            <p class="text-sm">Learn, detect, and act against cancer early.</p>
+        </div>
+        <nav class="bg-green-500 py-2">
+            <div class="container mx-auto text-center">
+                <a href="{% url 'home' %}" class="text-white px-4 py-2 hover:underline">Home</a>
+                <a href="{% url 'lung_cancer_detection' %}" class="text-white px-4 py-2 hover:underline">Lung Cancer Detection</a>
+                <a href="{% url 'predict_cancer' %}" class="text-white px-4 py-2 hover:underline">Breast Cancer Detection</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-10 px-4">
+        <!-- Infographic Section -->
+        <section class="bg-white shadow-md rounded-lg p-6 mb-10">
+            <h2 class="text-2xl font-bold text-center text-green-600 mb-6">What is Cancer?</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                Cancer is a group of diseases characterized by uncontrolled growth and spread of abnormal cells. Detecting it early increases the chances of successful treatment.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Type of Cancer -->
+                <div class="bg-green-50 p-4 rounded-lg shadow-md">
+                    <h3 class="text-lg font-bold text-green-600">Types of Cancer</h3>
+                    <p class="text-gray-700 mt-2">
+                        Includes breast cancer, lung cancer, colon cancer, and more.
+                    </p>
+                </div>
+
+                <!-- Stages of Cancer -->
+                <div class="bg-green-50 p-4 rounded-lg shadow-md">
+                    <h3 class="text-lg font-bold text-green-600">Stages of Cancer</h3>
+                    <p class="text-gray-700 mt-2">
+                        Early stages have better outcomes; know the progression.
+                    </p>
+                </div>
+
+                <!-- Detection Methods -->
+                <div class="bg-green-50 p-4 rounded-lg shadow-md">
+                    <h3 class="text-lg font-bold text-green-600">Detection Methods</h3>
+                    <p class="text-gray-700 mt-2">
+                        Methods include mammograms, X-rays, biopsies, and blood tests.
+                    </p>
+                </div>
+
+                <!-- Prevention Tips -->
+                <div class="bg-green-50 p-4 rounded-lg shadow-md">
+                    <h3 class="text-lg font-bold text-green-600">Prevention Tips</h3>
+                    <p class="text-gray-700 mt-2">
+                        Healthy diet, no smoking, regular exercise, and screenings.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="text-center">
+            <a 
+                href="{% url 'predict_cancer' %}" 
+                class="inline-block bg-pink-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-pink-700 focus:ring-2 focus:ring-pink-400 focus:outline-none transition duration-300 mb-4"
+            >
+                Go to Breast Cancer Detection
+            </a>
+            <a 
+                href="{% url 'lung_cancer_detection' %}" 
+                class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none transition duration-300"
+            >
+                Go to Lung Cancer Detection
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-green-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2024 Cancer Awareness Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

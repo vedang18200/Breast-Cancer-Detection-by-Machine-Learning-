@@ -5,13 +5,15 @@ import pdfplumber
 import re
 import joblib
 import os
+from django.conf import settings
 
 # Load TensorFlow model for images
-image_model_path = os.path.join("V:/Breast_cancer/model", "breast_cancer_model.h5")
+image_model_path = os.path.join(settings.MODEL_DIR, 'breast_cancer_model.h5')
+
 image_model = tf.keras.models.load_model(image_model_path)
 
 # Load joblib model for PDFs
-pdf_model_path = os.path.join("V:/Breast_cancer/model", "breast_cancer_model.pkl")
+pdf_model_path = os.path.join(settings.MODEL_DIR, 'breast_cancer_model.pkl')
 pdf_model = joblib.load(pdf_model_path)
 
 # Features expected in PDF reports

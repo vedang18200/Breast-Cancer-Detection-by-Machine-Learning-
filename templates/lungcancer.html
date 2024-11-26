@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Lung Cancer Detection Portal</h1>
+            <p class="text-sm">Empowering early detection and spreading awareness.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-10 px-4">
+        <!-- Form Section -->
+        <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-lg mx-auto mb-10">
+            <h2 class="text-2xl font-bold text-center text-blue-600 mb-4">Upload Your Files</h2>
+            <form action="{% url 'lung_cancer_detection' %}" method="post" enctype="multipart/form-data" class="space-y-6">
+                {% csrf_token %}
+                <div>
+                    <label for="file-upload" class="block text-sm font-medium text-gray-700 mb-2">
+                        Upload Your CT Scan
+                    </label>
+                    <input 
+                        type="file" 
+                        id="file-upload" 
+                        name="file" 
+                        class="block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        accept="image/*" 
+                        required
+                    />
+                    <p class="text-xs text-gray-500 mt-2">Accepted formats: JPG, PNG</p>
+                </div>
+
+                <div>
+                    <button 
+                        type="submit" 
+                        class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none transition duration-300"
+                    >
+                        Upload & Detect
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Result Section -->
+        {% if result %}
+        <section class="bg-green-50 p-6 rounded-lg shadow-md mb-10">
+            <h2 class="text-xl font-bold text-green-600 mb-4">Prediction Result</h2>
+            <p class="text-lg"><strong>Predicted Class:</strong> {{ result }}</p>
+            <p class="text-lg"><strong>Confidence:</strong> {{ confidence }}</p>
+            <div class="mt-4">
+                <p class="text-gray-700">{{ info }}</p>
+            </div>
+        </section>
+        {% elif error %}
+        <section class="bg-red-50 p-6 rounded-lg shadow-md mb-10">
+            <h2 class="text-xl font-bold text-red-600 mb-4">Error</h2>
+            <p class="text-gray-700">{{ error }}</p>
+        </section>
+        {% endif %}
+
+        <!-- Awareness Section -->
+        <section class="bg-blue-50 p-8 rounded-lg shadow-lg mb-10">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">
+                Lung Cancer Awareness
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+                Lung cancer is one of the leading causes of cancer deaths worldwide. Early detection is vital to improving survival rates. Be proactive in monitoring your health and consulting medical professionals when necessary.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2024 Lung Cancer Awareness. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
