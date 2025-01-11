@@ -1,8 +1,5 @@
 # Cancer Detection Hub using Machine Learning  
 
-![Project Banner](#)  
-*(Add a banner image here if you have one)*  
-
 ## Table of Contents  
 - [Introduction](#introduction)  
 - [Features](#features)  
