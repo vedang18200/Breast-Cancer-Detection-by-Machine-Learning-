@@ -13,7 +13,6 @@
 - [Usage](#usage)  
 - [Screenshots](#screenshots)  
 - [Future Enhancements](#future-enhancements)  
-- [License](#license)  
 
 ---
 
@@ -74,10 +73,64 @@ The **Cancer Detection Hub** is a machine learning-based system designed to assi
 1. Clone the repository:  
    ```bash  
    git clone https://github.com/vedang18200/Breast-Cancer-Detection-by-Machine-Learning-.git
+   ```
+2.Navigte to the directory:
+  ```bash
+   cd Breast-Cancer-Detection-by-Machine-Learning-
+  ```
+3.Create and activate a virtual environment:
+  ```bash 
+  python -m venv venv
+  source venv/bin/activate
+  ```
+4.Install dependencies:
+ ```bash
+  pip install -r requirements.txt
+ ```
+5.Set up the database:
+ ```bash
+  python manage.py makemigrations
+  python manage.py migrate
+ ```
+6.Run the development server:
+ ```bash
+ python manage.py runserver
+ ```
+7.Access the app in the browser:
+  ```bash
+  http://127.0.0.1:8000/
+  ```
 
+---
 
+## Usage 
+1.Upload structured data for breast cancer detection or MRI scans for lung cancer detection.
+2.Click on the "Predict" button.
+3.View the results indicating whether the tumor is benign or malignant.
 
+---
+## Screenshots  
 
+1. **Home Page:**  
+   ![Home Page](images/homepage.png)  
 
+2. **Breast Cancer Detection Input:**  
+   ![Breast Cancer Detection Input](images/breast_cancer_input.png)  
+
+3. **Lung Cancer Detection Input:**  
+   ![Lung Cancer Detection Input](images/lung_cancer_input.png)  
+
+4. **Prediction Results:**  
+   ![Prediction Results](images/prediction_results.png)  
+
+---
+## Future Enhancements
+ - Include additional cancer types for detection.
+ - Improve the accuracy of the models with more training data.
+ - Add a feature for exporting the results to a PDF report.
+ - Make the hub accessible online for broader usage.
+ - Integrate advanced preprocessing techniques for MRI scans.
+
+---
 
 
