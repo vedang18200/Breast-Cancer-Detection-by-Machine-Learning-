@@ -112,16 +112,16 @@ The **Cancer Detection Hub** is a machine learning-based system designed to assi
 ## Screenshots  
 
 1. **Home Page:**  
-   ![Home Page](images/homepage.png)  
+   ![Home Page](https://imgur.com/a/wkqLlTW)  
 
 2. **Breast Cancer Detection Input:**  
-   ![Breast Cancer Detection Input](images/breast_cancer_input.png)  
+   ![Breast Cancer Detection Input](https://imgur.com/FCGMJam)  
 
 3. **Lung Cancer Detection Input:**  
-   ![Lung Cancer Detection Input](images/lung_cancer_input.png)  
+   ![Lung Cancer Detection Input](https://imgur.com/9fMpmKp)  
 
 4. **Prediction Results:**  
-   ![Prediction Results](images/prediction_results.png)  
+   ![Prediction Results](https://imgur.com/VCC90Y4)  
 
 ---
 ## Future Enhancements
