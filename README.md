@@ -48,16 +48,17 @@ The **Cancer Detection Hub** is a machine learning-based system designed to assi
 ## Dataset  
 ### Breast Cancer:  
 - Dataset: Breast Cancer Wisconsin Dataset  
-- Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29)  
+- Source: [Machine Learning Repository](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data?resource=download)  
 
 ### Lung Cancer:  
-- MRI scans dataset. *(Specify the source or mention how the dataset was acquired.)*  
+- MRI scans dataset.
+- Source:[CT & MRI Scans-datasets](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images)
 
 ---
 
 ## How It Works  
 1. **Data Input:**  
-   - Users can upload structured data for breast cancer or MRI scans for lung cancer.  
+   - Users can upload structured data for breast cancer or MRI/CT scans for lung cancer.  
 2. **Preprocessing:**  
    - The system preprocesses the input data to make it suitable for the model.  
 3. **Model Prediction:**  
@@ -72,4 +73,11 @@ The **Cancer Detection Hub** is a machine learning-based system designed to assi
 
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/vedang18200/Breast-Cancer-Detection-by-Machine-Learning-.git  
+   git clone https://github.com/vedang18200/Breast-Cancer-Detection-by-Machine-Learning-.git
+
+
+
+
+
+
+
