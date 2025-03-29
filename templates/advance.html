@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Cancer Analysis & Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeIn: 'fadeIn 0.5s ease-out',
+                        slideIn: 'slideIn 0.5s ease-out',
+                        slideUp: 'slideUp 0.5s ease-out',
+                        pulseComplex: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-40px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-200">
+
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-6 shadow-2xl animate__animated animate__fadeInDown">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-extrabold tracking-tight mb-3">Advanced Cancer Analysis & Detection</h1>
+            <p class="text-lg opacity-70">Integrated AI for comprehensive cancer insights.</p>
+        </div>
+        <nav class="bg-indigo-800 py-3 mt-4">
+            <div class="container mx-auto text-center">
+                <a href="{% url 'home' %}" class="text-white px-4 py-2 hover:text-gray-300">Dashboard</a>
+                <a href="{% url 'lung_cancer_detection' %}" class="text-white px-4 py-2 hover:text-gray-300">Lung Analysis</a>
+                <a href="{% url 'predict_cancer' %}" class="text-white px-4 py-2 hover:text-gray-300">Breast Analysis</a>
+                <a href="#" class="text-white px-4 py-2 hover:text-gray-300">Advanced Metrics</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-12 px-6 animate__animated animate__fadeInUp">
+        <section class="bg-gray-800 shadow-xl rounded-3xl p-8 mb-12 animate__animated animate__slideUp">
+            <h2 class="text-3xl font-semibold text-indigo-400 mb-8 text-center">Advanced Metrics</h2>
+            <p class="text-gray-300 leading-relaxed mb-10 text-center">
+                Exploring key statistics and AI-driven analytics for improved cancer prognosis and treatment strategies.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-700 p-6 rounded-2xl shadow-md animate__animated animate__slideIn">
+                    <h3 class="text-lg font-semibold text-indigo-300 mb-3">Survival Rate Analysis</h3>
+                    <canvas id="survivalChart" width="100" height="100"></canvas>
+                </div>
+
+                <div class="bg-gray-700 p-6 rounded-2xl shadow-md animate__animated animate__slideIn">
+                    <h3 class="text-lg font-semibold text-indigo-300 mb-3">Tumor Growth Progression</h3>
+                    <canvas id="tumorGrowthChart" width="100" height="100"></canvas>
+                </div>
+
+                <div class="bg-gray-700 p-6 rounded-2xl shadow-md animate__animated animate__slideIn">
+                    <h3 class="text-lg font-semibold text-indigo-300 mb-3">Risk Factor Correlation</h3>
+                    <canvas id="riskFactorChart" width="100" height="100"></canvas>
+                </div>
+
+                <div class="bg-gray-700 p-6 rounded-2xl shadow-md animate__animated animate__slideIn">
+                    <h3 class="text-lg font-semibold text-indigo-300 mb-3">AI-Based Predictions</h3>
+                    <canvas id="aiPredictionChart" width="100" height="100"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-6 shadow-2xl animate__animated animate__fadeIn">
+        <div class="container mx-auto text-center">
+            <p class="text-lg">&copy; 2024 Advanced Cancer Analysis Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const survivalCtx = document.getElementById('survivalChart').getContext('2d');
+        new Chart(survivalCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: 'Survival Rate (%)',
+                    data: [90, 85, 78, 70, 65],
+                    borderColor: '#36A2EB',
+                    fill: false
+                }]
+            }
+        });
+
+        const tumorCtx = document.getElementById('tumorGrowthChart').getContext('2d');
+        new Chart(tumorCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4'],
+                datasets: [{
+                    label: 'Tumor Size (cm)',
+                    data: [2, 4, 6, 9],
+                    backgroundColor: '#FF6384'
+                }]
+            }
+        });
+
+        const riskFactorCtx = document.getElementById('riskFactorChart').getContext('2d');
+        new Chart(riskFactorCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Smoking', 'Obesity', 'Genetic', 'Radiation Exposure'],
+                datasets: [{
+                    data: [30, 25, 20, 25],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
+                }]
+            }
+        });
+
+        const aiPredictionCtx = document.getElementById('aiPredictionChart').getContext('2d');
+        new Chart(aiPredictionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Positive Outcome', 'Negative Outcome'],
+                datasets: [{
+                    data: [70, 30],
+                    backgroundColor: ['#36A2EB', '#FF6384']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
