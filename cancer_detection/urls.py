@@ -20,11 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('predict_cancer/', include('breast_cancer.urls')),  
-<<<<<<< HEAD
-    path('lung_cancer_detection/', include('lung_cancer.urls')),      
-=======
-    path('lung_cancer_detection/', include('lung_cancer.urls')),
-    path('advance/',include('advance.urls')),    
->>>>>>> 96ab150 (GUI update)
+    path('lung_cancer_detection/', include('lung_cancer.urls')),    
+    path('advance/', include('advance.urls')),    
     path('', include('home_page.urls')),                  
 ]

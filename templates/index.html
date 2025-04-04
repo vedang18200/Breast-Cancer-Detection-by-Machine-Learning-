@@ -3,35 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Breast Cancer Detection</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-=======
     <title>Advanced Breast Cancer Analysis</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
->>>>>>> 96ab150 (GUI update)
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     animation: {
                         fadeIn: 'fadeIn 0.5s ease-out',
-<<<<<<< HEAD
-                        pulseFast: 'pulse 1s linear infinite',
-=======
                         pulseComplex: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         slideIn: 'slideIn 0.5s ease-out',
                         slideUp: 'slideUp 0.5s ease-out'
->>>>>>> 96ab150 (GUI update)
                     },
                     keyframes: {
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
                         },
-<<<<<<< HEAD
-=======
                         slideIn: {
                             '0%': { transform: 'translateX(-40px)', opacity: '0' },
                             '100%': { transform: 'translateX(0)', opacity: '1' },
@@ -40,68 +29,12 @@
                             '0%': { transform: 'translateY(40px)', opacity: '0' },
                             '100%': { transform: 'translateY(0)', opacity: '1' },
                         },
->>>>>>> 96ab150 (GUI update)
                     },
                 },
             },
         };
     </script>
 </head>
-<<<<<<< HEAD
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-pink-600 text-white py-4 animate-fadeIn">
-        <div class="container mx-auto text-center">
-            <h1 class="text-3xl font-bold">Breast Cancer Detection Portal</h1>
-            <p class="text-sm">Empowering early detection and spreading awareness.</p>
-        </div>
-    </header>
-
-    <main class="container mx-auto py-10 px-4 animate-fadeIn">
-        <!-- Form Section -->
-        <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-lg mx-auto mb-10 transform transition duration-500 hover:scale-105">
-            <h2 class="text-2xl font-bold text-center text-pink-600 mb-4">Upload Your Files</h2>
-            <p class="text-center text-gray-600 mb-6">
-                Choose and upload either a mammogram image or a medical report to detect potential signs of breast cancer.
-            </p>
-            <form action="{% url 'predict_cancer' %}" method="post" enctype="multipart/form-data" class="space-y-6">
-                {% csrf_token %}
-                <!-- Upload Type Selection -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
-                        Choose Upload Type
-                    </label>
-                    <select id="upload-type" name="upload-type" class="block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500">
-                        <option value="image">Mammogram Image</option>
-                        <option value="pdf">Report PDF</option>
-                    </select>
-                </div>
-
-                <!-- File Upload -->
-                <div>
-                    <label for="file-upload" class="block text-sm font-medium text-gray-700 mb-2">
-                        Upload File
-                    </label>
-                    <input 
-                        type="file" 
-                        id="file-upload" 
-                        name="file" 
-                        class="block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500"
-                        accept="image/*,application/pdf" 
-                        required
-                    />
-                    <p class="text-xs text-gray-500 mt-2">
-                        Accepted formats: JPG, PNG, PDF
-                    </p>
-                </div>
-
-                <!-- Submit Button -->
-                <div>
-                    <button 
-                        type="submit" 
-                        class="w-full bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-pink-700 focus:ring-2 focus:ring-pink-400 focus:outline-none transition duration-300"
-                    >
-                        Upload & Detect
-=======
 <body class="bg-gradient-to-br from-pink-50 to-purple-100 text-gray-800">
 
     <header class="bg-gradient-to-r from-pink-700 to-purple-700 text-white py-10 shadow-2xl animate__animated animate__fadeInDown">
@@ -135,33 +68,11 @@
                 <div>
                     <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:bg-gradient-to-r hover:from-pink-700 hover:to-purple-700 focus:ring-2 focus:ring-pink-400 focus:outline-none transition duration-300 pulseComplex">
                         Analyze & Generate Report
->>>>>>> 96ab150 (GUI update)
                     </button>
                 </div>
             </form>
         </section>
 
-<<<<<<< HEAD
-        <!-- Result Section -->
-        <!-- Result Section -->
-        {% if result %}
-        <section class="bg-green-100 border border-green-500 text-green-700 rounded-lg p-4 w-full max-w-lg mx-auto mb-10">
-            <h3 class="text-xl font-bold text-green-800 mb-2">Prediction Result:</h3>
-            <p class="text-lg mb-4">{{ result }}</p>
-            
-            <!-- Static Info About Prediction -->
-            <div class="bg-white border border-gray-300 rounded-lg p-4 shadow-sm">
-                {% if result == "Malignant" %}
-                <h4 class="text-lg font-semibold text-red-600 mb-2">What does Malignant mean?</h4>
-                <p class="text-gray-700">
-                    A malignant result indicates the presence of cancerous cells. It is important to consult with a healthcare provider immediately for further diagnosis and treatment options.
-                </p>
-                {% elif result == "Benign" %}
-                <h4 class="text-lg font-semibold text-green-600 mb-2">What does Benign mean?</h4>
-                <p class="text-gray-700">
-                    A benign result indicates that no cancerous cells were detected. However, regular check-ups and awareness are essential for long-term health.
-                </p>
-=======
         {% if result %}
         <section class="bg-green-50 border border-green-300 text-green-800 rounded-3xl p-8 w-full max-w-2xl mx-auto mb-16 animate__animated animate__slideUp">
             <h3 class="text-2xl font-semibold text-green-900 mb-6 text-center">Analysis Result</h3>
@@ -173,60 +84,10 @@
                 {% elif result == "Benign" %}
                 <h4 class="text-lg font-semibold text-green-600 mb-4">Benign Findings</h4>
                 <p class="text-gray-700">The analysis suggests benign characteristics. Regular check-ups are still recommended for ongoing monitoring.</p>
->>>>>>> 96ab150 (GUI update)
                 {% endif %}
             </div>
         </section>
         {% elif error %}
-<<<<<<< HEAD
-        <section class="bg-red-100 border border-red-500 text-red-700 rounded-lg p-4 w-full max-w-lg mx-auto mb-10">
-            <h3 class="text-xl font-bold text-red-800 mb-2">Error:</h3>
-            <p class="text-lg">{{ error }}</p>
-        </section>
-        {% endif %}
-
-
-        <!-- Awareness Section -->
-        <section class="bg-pink-50 p-8 rounded-lg shadow-lg mb-10 animate-fadeIn">
-            <div class="flex flex-col lg:flex-row lg:items-center">
-                <!-- Awareness Image -->
-                <div class="flex-shrink-0 mb-6 lg:mb-0 lg:mr-8">
-                    <img 
-                        src="https://1000logos.net/wp-content/uploads/2022/04/Breast-Cancer-Logo-500x281.jpg" 
-                        alt="Breast Cancer Awareness" 
-                        class="rounded-lg shadow-md transform hover:scale-105 transition duration-300"
-                    />
-                </div>
-        
-                <!-- Awareness Content -->
-                <div>
-                    <h2 class="text-2xl font-bold text-pink-600 mb-4">
-                        Breast Cancer Awareness
-                    </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Breast cancer is one of the most common cancers affecting women worldwide. Early detection plays a critical role in improving survival rates. By staying informed and proactive, we can make a significant impact.
-                    </p>
-        
-                    <!-- Key Awareness Points -->
-                    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-                        <h3 class="text-lg font-semibold text-pink-600 mb-2">
-                            Take Action for Prevention:
-                        </h3>
-                        <ul class="list-disc pl-5 text-gray-700">
-                            <li>Schedule regular mammograms for early detection.</li>
-                            <li>Know the warning signs: lumps, pain, or changes in breast appearance.</li>
-                            <li>Adopt a healthy lifestyle with proper nutrition and regular exercise.</li>
-                        </ul>
-                    </div>
-        
-                    <!-- Awareness Link -->
-                    <div class="text-center lg:text-left">
-                        <a 
-                            href="https://www.nationalbreastcancer.org/" 
-                            target="_blank" 
-                            class="inline-block bg-pink-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-pink-700 focus:ring-2 focus:ring-pink-400 focus:outline-none transition duration-300"
-                        >
-=======
         <section class="bg-red-50 border border-red-300 text-red-800 rounded-3xl p-8 w-full max-w-2xl mx-auto mb-16 animate__animated animate__slideUp">
             <h3 class="text-2xl font-semibold text-red-900 mb-6 text-center">Analysis Error</h3>
             <p class="text-lg text-center">{{ error }}</p>
@@ -253,7 +114,6 @@
                         <a href="https://www.nationalbreastcancer.org/" 
                             target="_blank" 
                             class="inline-block bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold py-4 px-10 rounded-xl shadow-md hover:bg-gradient-to-r hover:from-pink-700 hover:to-purple-700 focus:ring-2 focus:ring-pink-400 focus:outline-none transition duration-300">
->>>>>>> 96ab150 (GUI update)
                             Learn More About Breast Cancer
                         </a>
                     </div>
@@ -268,8 +128,4 @@
         </div>
     </footer>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 96ab150 (GUI update)
